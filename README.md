@@ -1,262 +1,280 @@
-# OpenSearch Metrics Monitoring Script
+# Upgrade Scripts & Load Testing
 
-This script monitors OpenSearch cluster metrics to help diagnose performance issues during load testing of the `/addToChat` API.
+This repository contains load testing scripts for the `/addToChat` API endpoint to help identify performance bottlenecks and system capacity limits.
 
-## Purpose
-
-The `/addToChat` API uses the `pms-green-dots` OpenSearch index. Previous load tests failed due to OpenSearch breaking under load. This script helps you monitor all critical metrics to:
-
-1. **Identify the root cause** of the OpenSearch failure
-2. **Monitor performance** during load tests
-3. **Provide evidence** of the `refresh:true` bottleneck
-
-## Root Cause Identified
-
-**The primary issue is that ALL OpenSearch write operations use `refresh: true`**, which forces immediate index refreshes and causes 50-100x performance degradation.
-
-**Location:** `node_modules/@amurahealth/pms-utils/ESService.ts` (lines 49, 67, 81, 101, 141, 176)
-
-## Setup
-
-### 1. Install Dependencies
-
-```bash
-cd upgradeScripts
-npm install
-```
-
-### 2. Configure AWS Credentials
-
-Ensure your AWS credentials are configured with access to:
-- SSM Parameter Store (to read `pms-elastic-search-url`)
-- OpenSearch cluster (read permissions for metrics)
-
-```bash
-# Set AWS credentials (if not already configured)
-export AWS_ACCESS_KEY_ID=your_access_key
-export AWS_SECRET_ACCESS_KEY=your_secret_key
-export AWS_REGION=ap-south-1
-```
-
-## Usage
-
-### Single Check
-
-Run a one-time metrics check:
-
-```bash
-npm run check
-```
-
-Or directly:
-
-```bash
-npx ts-node checkOpenSearchMetrics.ts
-```
-
-### Continuous Monitoring (Recommended for Load Testing)
-
-Monitor metrics continuously during your load test:
-
-```bash
-# Check every 30 seconds (default)
-npm run check:continuous
-
-# Check every 5 seconds (recommended during active load test)
-npm run check:fast
-
-# Custom interval (every 10 seconds)
-npx ts-node checkOpenSearchMetrics.ts --continuous --interval=10
-```
-
-**Tip:** Start this in a separate terminal BEFORE running your load test, then keep it running throughout the test.
-
-## What It Monitors
-
-### 1. Thread Pool Metrics (CRITICAL)
-- ✅ `ThreadpoolWriteQueue` - write queue size
-- ✅ `ThreadpoolWriteRejected` - **rejected write requests** (primary failure indicator)
-- ✅ `ThreadpoolBulkQueue` - bulk operations queue
-- ✅ `ThreadpoolBulkRejected` - **rejected bulk requests** (primary failure indicator)
-- ✅ `ThreadpoolSearchQueue` - search queue size
-- ✅ `ThreadpoolSearchRejected` - rejected searches
-
-### 2. Performance Metrics
-- ✅ `IndexingLatency` - time to index documents
-- ✅ `IndexingRate` - documents indexed per second
-- ✅ `SearchLatency` - search response time
-- ✅ `RefreshLatency` - **will be HIGH due to refresh:true**
-- ✅ `RefreshCount` - number of refreshes per minute
-
-### 3. Resource Metrics
-- ✅ `CPUUtilization` - should stay below 80%
-- ✅ `JVMMemoryPressure` - should stay below 75%
-- ✅ `JVMGCYoungCollectionCount` - garbage collection frequency
-- ✅ `JVMGCOldCollectionCount` - old gen GC (expensive)
-
-### 4. Cluster Health
-- ✅ `ClusterStatus` - green/yellow/red
-- ✅ `Nodes` - active node count
-- ✅ `Shards` - active, relocating, unassigned
-
-### 5. Index-Specific Stats
-- ✅ Number of shards and replicas for `pms_green_dot`
-- ✅ Refresh interval setting
-- ✅ Index size and document count
-
-## Output
-
-### Console Output
-
-The script provides real-time formatted output with:
-- Color-coded status indicators (✅ green, ⚠️ yellow, 🔴 red)
-- Tables for thread pool statistics
-- Detailed node resource metrics
-- Critical issues and warnings
-
-### JSON Files
-
-Complete metrics are saved to:
-```
-upgradeScripts/metrics-output/opensearch-metrics-{timestamp}.json
-```
-
-### CSV Summary
-
-A summary CSV is continuously appended to:
-```
-upgradeScripts/metrics-output/metrics-summary.csv
-```
-
-**This CSV is perfect for:**
-- Importing into Excel/Google Sheets
-- Creating charts and graphs
-- Comparing metrics over time
-- Proving the performance issue to your manager
-
-## Load Testing Recommendations
-
-### Before the Load Test
-
-1. **Run baseline check:**
-   ```bash
-   npm run check
-   ```
-
-2. **Start continuous monitoring:**
-   ```bash
-   npm run check:fast
-   ```
-
-3. **Note baseline metrics:**
-   - Current thread pool rejections (should be 0)
-   - Current JVM memory pressure
-   - Average refresh time
-
-### During the Load Test
-
-**Watch for these critical indicators:**
-
-🔴 **Immediate stop conditions:**
-- `ThreadpoolBulkRejected` or `ThreadpoolWriteRejected` > 10
-- `JVMMemoryPressure` > 85%
-- `CPUUtilization` > 90%
-- Cluster status turns RED
-
-⚠️ **Warning signs:**
-- `JVMMemoryPressure` > 75%
-- `CPUUtilization` > 80%
-- Average refresh time > 100ms
-- Old GC collections increasing rapidly
-
-### Load Test Parameters
-
-**Start conservative:**
-- Concurrent users: Start with 10, increase gradually
-- Messages per second: Start with 5/sec
-- Ramp-up period: 2 minutes
-- Test duration: 5 minutes
-- Monitor continuously!
-
-**Scaling up:**
-Only increase load if:
-- No thread pool rejections
-- JVM memory < 70%
-- CPU < 75%
-- No errors in application logs
-
-## Expected Findings
-
-Based on the code analysis, you will likely see:
-
-1. ✅ **High refresh latency** - Proves `refresh:true` is the bottleneck
-2. ✅ **Thread pool rejections** - When load exceeds refresh capacity
-3. ✅ **High CPU usage** - Refresh operations are CPU-intensive
-4. ✅ **JVM memory pressure** - Constant refreshes cause GC pressure
-
-## Troubleshooting
-
-### "Failed to retrieve OpenSearch URL from Parameter Store"
-
-**Solution:** Check AWS credentials and SSM parameter exists:
-```bash
-aws ssm get-parameter --name pms-elastic-search-url --region ap-south-1
-```
-
-### "OpenSearch connection timeout"
-
-**Solutions:**
-1. Check security group allows inbound traffic from your IP
-2. Verify VPC settings if OpenSearch is in a VPC
-3. Check if you need to be on VPN
-
-### "Permission denied" errors
-
-**Solution:** Ensure your AWS IAM role has these permissions:
-- `ssm:GetParameter` for Parameter Store
-- `es:ESHttpGet` for OpenSearch read operations
-
-## Files Created
+## Directory Structure
 
 ```
 upgradeScripts/
-├── checkOpenSearchMetrics.ts    # Main monitoring script
-├── package.json                  # Dependencies
-├── tsconfig.json                 # TypeScript configuration
-├── README.md                     # This file
-├── .gitignore                    # Git ignore rules
-└── metrics-output/               # Output directory (created on first run)
-    ├── opensearch-metrics-*.json # Detailed metrics snapshots
-    └── metrics-summary.csv       # Continuous summary for analysis
+├── README.md                 # This file
+├── package.json              # Node.js dependencies
+├── tsconfig.json             # TypeScript configuration
+├── .gitignore                # Git ignore rules
+└── load-tests/               # k6 Load testing scripts
+    ├── README.md             # Detailed load testing documentation
+    ├── chat-load-test.js     # Multi-room load test
+    ├── single-room-load-test.js  # Single-room stress test
+    └── *.json                # Test data files
 ```
 
-## Next Steps
+## Quick Start
 
-After gathering metrics that prove the `refresh:true` issue:
+### Prerequisites
 
-1. **Share the CSV data** with your manager
-2. **Highlight the refresh latency** in the metrics
-3. **Show thread pool rejections** during load
-4. **Recommend the fix:** Change `refresh:true` to `refresh:false` in ESService.ts
+1. **Install k6** (load testing tool):
+   ```bash
+   # macOS
+   brew install k6
 
-### The Fix
+   # Linux
+   sudo apt-get install k6
 
-The proper fix is to update `node_modules/@amurahealth/pms-utils/ESService.ts`:
+   # Windows
+   choco install k6
+   ```
 
-```typescript
-// BEFORE (current - causes issues)
-refresh: true
+2. **Install Node.js dependencies** (if needed):
+   ```bash
+   npm install
+   ```
 
-// AFTER (recommended)
-refresh: false  // Let OpenSearch refresh on its own schedule (default: 1s)
+3. **Ensure your API server is running**:
+   ```bash
+   # Default: http://localhost:8080/addToChat
+   ```
+
+### Running Load Tests
+
+**Multi-Room Load Test** (3000 VUs, 100K iterations):
+```bash
+cd load-tests
+k6 run chat-load-test.js
 ```
 
-This single change will:
-- Improve write performance by 50-100x
-- Eliminate thread pool rejections
-- Reduce CPU and memory pressure
-- Allow proper batching of operations
+**Single-Room Stress Test** (100 VUs, 10K iterations):
+```bash
+cd load-tests
+k6 run single-room-load-test.js
+```
+
+**Custom Parameters:**
+```bash
+# Run with specific VUs and duration
+k6 run --vus 1000 --duration 10m chat-load-test.js
+
+# Run with specific VUs and iterations
+k6 run --vus 500 --iterations 50000 chat-load-test.js
+```
+
+## Load Test Features
+
+Both test scripts include:
+
+- **Breaking Point Detection** - Identifies when system starts failing
+  - First timeout iteration
+  - First error iteration
+  - First S3 SlowDown error
+
+- **Custom Metrics**:
+  - Chat API success rate
+  - Green dot updates counter
+  - S3 error tracking
+  - Total requests and errors
+  - Timeout error tracking
+
+- **Realistic User Simulation**:
+  - Variable delays between messages (1.0-1.4s for multi-room, 700ms for single-room)
+  - Unique messages per iteration
+  - Real-world payload structure
+
+- **Detailed Error Logging**:
+  - Iteration tracking
+  - Room and VU identification
+  - Response timing
+  - Error categorization
+
+- **Progress Monitoring**:
+  - Periodic success logging (every 1000 iterations)
+  - Real-time error reporting
+  - Summary statistics at end
+
+## Understanding Results
+
+### Key Metrics to Watch
+
+**Success Indicators:**
+- ✅ `chat_api_success_rate` > 99%
+- ✅ `http_req_duration` p95 < 2s
+- ✅ No timeout errors
+- ✅ No S3 SlowDown errors
+
+**Warning Signs:**
+- ⚠️ Success rate 95-99%
+- ⚠️ p95 response time 2-5s
+- ⚠️ Occasional S3 errors
+- ⚠️ Increasing error rates
+
+**Critical Issues:**
+- 🔴 Success rate < 95%
+- 🔴 p95 response time > 5s
+- 🔴 Frequent timeouts
+- 🔴 Many S3 SlowDown errors
+
+### Example Output
+
+```
+========================================
+🎯 BREAKING POINT ANALYSIS
+========================================
+
+⏱️ First Timeout at Iteration: 5234
+🔥 First Error at Iteration: 7891
+🐌 First S3 SlowDown at Iteration: 8456
+
+📊 Total Requests: 100000
+❌ Total Errors: 1234
+⏱️ Timeout Errors: 45
+🐌 S3 SlowDown Errors: 89
+📈 Error Rate: 1.23%
+⏱️ Timeout Rate: 0.05%
+========================================
+```
+
+## Load Testing Strategy
+
+### Recommended Approach
+
+1. **Baseline Test** (5 min, 100 VUs)
+   ```bash
+   k6 run --vus 100 --duration 5m chat-load-test.js
+   ```
+
+2. **Gradual Scaling** (increase VUs progressively)
+   ```bash
+   k6 run --vus 500 --duration 5m chat-load-test.js
+   k6 run --vus 1000 --duration 5m chat-load-test.js
+   k6 run --vus 2000 --duration 5m chat-load-test.js
+   ```
+
+3. **Stress Testing** (find breaking point)
+   ```bash
+   k6 run --vus 5000 --iterations 200000 chat-load-test.js
+   ```
+
+4. **Endurance Testing** (sustained load)
+   ```bash
+   k6 run --vus 1000 --duration 1h chat-load-test.js
+   ```
+
+## Test Configuration
+
+### Multi-Room Load Test (`chat-load-test.js`)
+
+- **Purpose**: Test system behavior with multiple concurrent chat rooms
+- **VUs**: 3000 concurrent users
+- **Iterations**: 100,000 messages
+- **Delay**: 1.0-1.4 seconds between messages
+- **Test Data**: `newflow_3k_rooms.json` (3000 rooms)
+- **Timeout**: 100 seconds per request
+
+### Single-Room Load Test (`single-room-load-test.js`)
+
+- **Purpose**: Stress test a single room to find room-level capacity limits
+- **VUs**: 100 concurrent users in same room
+- **Iterations**: 10,000 messages
+- **Delay**: 700ms between messages
+- **Test Data**: First room from `test-data_new.json`
+- **Success Threshold**: 95% success rate
+
+## Monitoring
+
+### What to Monitor During Tests
+
+**API Server:**
+- Response times (p95, p99)
+- Error rates
+- Memory usage
+- CPU utilization
+- Active connections
+
+**Database/OpenSearch:**
+- Query latency
+- Thread pool rejections
+- JVM memory pressure
+- CPU utilization
+- Connection pool usage
+
+**S3:**
+- SlowDown errors
+- Request rates
+- Latency
+
+## Troubleshooting
+
+### Common Issues
+
+**Connection Refused:**
+```bash
+# Verify server is running
+curl http://localhost:8080/addToChat
+```
+
+**Timeout Errors:**
+- Reduce concurrent VUs
+- Increase delay between requests
+- Optimize API performance
+- Scale infrastructure
+
+**S3 SlowDown Errors:**
+- Implement exponential backoff
+- Reduce attachment upload rate
+- Use S3 request rate tokens
+
+**High Error Rates:**
+- Check API server logs
+- Monitor database/OpenSearch metrics
+- Verify network connectivity
+- Check resource limits
+
+## Exporting Results
+
+Export test results for analysis:
+
+```bash
+# JSON format
+k6 run --out json=results.json chat-load-test.js
+
+# CSV format
+k6 run --out csv=results.csv chat-load-test.js
+
+# InfluxDB (for Grafana visualization)
+k6 run --out influxdb=http://localhost:8086/k6 chat-load-test.js
+```
+
+## Best Practices
+
+1. ✅ **Start small, scale gradually** - Don't jump to maximum load
+2. ✅ **Run multiple times** - Verify consistency of results
+3. ✅ **Monitor everything** - API, DB, OpenSearch, S3, network
+4. ✅ **Use realistic delays** - Simulate actual user behavior
+5. ✅ **Test in isolation** - Avoid interference from other systems
+6. ✅ **Document results** - Keep records of all test runs
+
+## Additional Resources
+
+- **Detailed Documentation**: [load-tests/README.md](load-tests/README.md)
+- **k6 Documentation**: https://k6.io/docs/
+- **k6 Testing Guides**: https://k6.io/docs/testing-guides/
+
+## Next Steps After Load Testing
+
+1. **Analyze breaking points** - Review metrics and identify bottlenecks
+2. **Investigate root causes** - Use monitoring data to pinpoint issues
+3. **Implement fixes** - Address identified performance problems
+4. **Retest** - Verify improvements with new load tests
+5. **Document capacity** - Establish production capacity limits
+6. **Set up alerts** - Monitor production metrics based on test findings
 
 ---
 
-**Questions?** Check the script output for detailed explanations of each metric.
+For detailed information about the load tests, test data format, and advanced usage, see [load-tests/README.md](load-tests/README.md).
