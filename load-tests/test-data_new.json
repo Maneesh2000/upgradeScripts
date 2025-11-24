@@ -1,0 +1,504 @@
+{
+  "rooms": [
+    {
+      "roomId": "e9019afc-e6e0-4469-84d0-ce48b3a8bc26",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "17fb963b-698d-494b-9ef1-269535af23e2"
+    },
+    {
+      "roomId": "1df50d91-0d5c-4cfd-9ce5-a8f8f29fa374",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "56e01722-3563-4348-9e20-b480ca0d697c"
+    },
+    {
+      "roomId": "95ebcf04-557f-4866-b6cf-b0c3b1bf4987",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "07ee49e2-781e-4a07-965b-fa60b4c896ed"
+    },
+    {
+      "roomId": "efeedcb7-cd14-4232-91aa-a2f0ef87672f",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "1a3ac93b-a9b2-4f39-a16f-a47463b13346"
+    },
+    {
+      "roomId": "9d416889-a156-4d76-b994-e0725f51afad",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "78e5ba6b-01ad-4624-a8e6-4f5e120d1f6e"
+    },
+    {
+      "roomId": "74da2f8b-c2d9-4f57-ad47-765231d39ac6",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "f969dbf5-7668-44e3-ab8d-c2616477f06a"
+    },
+    {
+      "roomId": "db45c5ba-7a16-4e0b-b3f8-15efbec400d7",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "d86ca486-3664-42a7-b124-d6bac1a10a94"
+    },
+    {
+      "roomId": "53187d64-9aa9-4b73-84d2-12ff9d47d777",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "8b308679-89b6-4024-acd6-c1b1721d7939"
+    },
+    {
+      "roomId": "755dfd00-0646-4589-a6c9-e6a37364dc95",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "a3c12988-7fa4-49c0-9035-784d493f04d7"
+    },
+    {
+      "roomId": "f08c9b0c-b206-4a90-99a3-d1696861495b",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "352a5036-7cae-461e-8b38-f89b135d006d"
+    },
+    {
+      "roomId": "f1f74f04-c7ec-483b-b696-3424c9209785",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "af79ba47-8d03-42c6-bb34-34ca6716dc4a"
+    },
+    {
+      "roomId": "07158c5b-7617-4690-9a7a-14220f31c8de",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "dfa8f27d-aa71-40fe-8480-b4a2e2cf2952"
+    },
+    {
+      "roomId": "316775b2-47c5-4fa7-a532-800cb29d5409",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "55cb63eb-8393-4947-8064-bb7659753c91"
+    },
+    {
+      "roomId": "cf092cd6-9cb3-4576-a037-53338897ea7e",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "264cea13-0d7a-4e0f-855e-5ef843d466e4"
+    },
+    {
+      "roomId": "543b629b-2519-4830-b413-be3a3b251f23",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "69a28273-124c-410b-ae4f-1e7236fe05cf"
+    },
+    {
+      "roomId": "fb6d5a41-c9fb-4d14-abd5-b16df058306b",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "47472b47-3c40-4ee4-b78e-515b79315640"
+    },
+    {
+      "roomId": "69eab422-04dd-4de0-ac21-e92892acabc4",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "7a67f96e-06b1-4276-8193-b623393977ee"
+    },
+    {
+      "roomId": "e2bdd605-1115-4f18-9292-53a30fb49ae6",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "e47f714e-e4ff-4f28-891c-5bbd0c8fec7b"
+    },
+    {
+      "roomId": "68e968d8-68e7-404d-ae4f-1fb912994093",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "0bc252f6-419e-4d4e-a6d3-56304076c4fc"
+    },
+    {
+      "roomId": "e62dd9d5-65fd-4aa5-90ed-c9e93dea216f",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "cf9ac4e7-e08b-468a-b9ae-d21765898115"
+    },
+    {
+      "roomId": "ec1a20e0-e322-46c5-b3ee-b7f0d1cdc65a",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "952a2b4d-9950-489d-866d-f055c1682847"
+    },
+    {
+      "roomId": "59b26d3c-4155-406d-a8dc-157852d299a9",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "c402deab-4a8d-4d71-be89-1af9f0486bed"
+    },
+    {
+      "roomId": "c5e1a7ed-6e58-45db-8dea-52b69e75b62a",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "b38f1f69-f12b-4e60-9891-aee6a830e45a"
+    },
+    {
+      "roomId": "355fd517-3e79-472b-b23b-9ee5974d9cff",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "e912dcc7-9449-4b76-8c82-011a967ccbcf"
+    },
+    {
+      "roomId": "7504bc3a-0598-455b-b8cc-6770f2da9d9a",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "7ba384bd-1a93-4a8a-ae87-ff1ece989f3d"
+    },
+    {
+      "roomId": "e27731d3-e51c-4cd2-887b-b6c2d6877cbd",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "d4e855c9-94bf-4929-872f-2fea02b03199"
+    },
+    {
+      "roomId": "26bc9727-3a6c-458f-80f4-0757d0a29709",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "65b30b3b-b001-44a6-b644-99c3fb4f4470"
+    },
+    {
+      "roomId": "185b66dd-b14a-4384-9a0e-cc58dc36a611",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "3c9aa3f6-3822-47c0-80ef-489d7ac02ab3"
+    },
+    {
+      "roomId": "e550c00d-d114-4279-8100-f5dd88c3d46e",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "27933a6e-8fde-4986-8554-02292b49d1e9"
+    },
+    {
+      "roomId": "8da882b6-ea4c-4398-b190-16b61a9572d0",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "41d512c7-62f1-44b2-8312-c4fb94036f18"
+    },
+    {
+      "roomId": "c3e268ef-eca5-4e69-9d05-629ed323d28c",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "be8f64fe-7e61-403f-b7ce-785f66658a2b"
+    },
+    {
+      "roomId": "924f0466-dd34-4696-b47c-e02afac838d8",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "d07e4988-0478-492e-8ed4-bdd86f35a173"
+    },
+    {
+      "roomId": "2d7c15ff-5fa3-40c1-9a57-9f255a694c65",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "f4ece4b9-8acf-4914-bec1-b8385ae2a0fe"
+    },
+    {
+      "roomId": "4d32e326-567f-4094-bda0-dab8be2b2a5e",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "306ed3fc-992b-4433-aff8-e7cb12b76021"
+    },
+    {
+      "roomId": "d6285bd2-b21c-432c-9fe5-2fa7dce5eb1e",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "323e4dfe-c45f-493e-96b9-972e03f2b70c"
+    },
+    {
+      "roomId": "57e85d4c-b75c-4238-8ff7-164086164793",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "b1ca893c-3f93-4cee-98f9-5eeffdcab602"
+    },
+    {
+      "roomId": "1d15cb1c-04d6-4e78-b44c-2f6e27ba3b5f",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "bd8e3536-c35c-4fc0-8dee-059f06665a5b"
+    },
+    {
+      "roomId": "dea617ef-b981-4179-96a3-ce7541698bce",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "713cf0f5-14ce-4cb3-8934-4f2c462a5add"
+    },
+    {
+      "roomId": "2fac38a9-9604-43a3-8e2d-3d413d922787",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "e2c4a0ae-f2c9-409c-a96f-6d57050b40bb"
+    },
+    {
+      "roomId": "432cface-4ad7-4b77-a39f-369f6db06759",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "2fd80b7c-e7dd-4188-a4cd-f43912163090"
+    },
+    {
+      "roomId": "7aaf41f5-6dba-46ec-8bc0-5613fd5bb5d9",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "a1ba4767-6c24-4796-bb5d-34ec12636362"
+    },
+    {
+      "roomId": "49cdb654-caa5-4b0f-b72e-d8879062825b",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "bd285a15-95c7-4ce3-a2ea-4eded816b28b"
+    },
+    {
+      "roomId": "9455defa-4332-49d4-b478-1134ee5bbabb",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "0aa5938b-809f-4e2e-a654-2724a360ceff"
+    },
+    {
+      "roomId": "c8201eb9-6ad5-44ef-bc08-6882b9ee2fed",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "2367b566-e054-45f5-92dc-8f59996a099f"
+    },
+    {
+      "roomId": "dde0b98f-417e-42c6-960d-baa075122f69",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "b5c8a91b-2481-4569-91ea-8100489773c4"
+    },
+    {
+      "roomId": "1243ddd6-f571-4668-aec0-3d3bd3a5d690",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "bd40a175-e543-4eda-96bb-67be2178b567"
+    },
+    {
+      "roomId": "bc018312-6ca2-4267-a527-3456cbc86dce",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "34504815-98eb-43b4-b614-f672bab7ae9a"
+    },
+    {
+      "roomId": "701a7740-931f-4542-a621-44f31af25c1b",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "45ebcfa3-1315-4afb-9a61-a229b04a22d0"
+    },
+    {
+      "roomId": "7cbc5597-8249-4bbf-8e9b-6d8e4e3dff63",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "a45a79bc-9c59-4ff0-a549-d4e24e6e4fd0"
+    },
+    {
+      "roomId": "d20b9e31-6a6a-45d4-97b2-8f1ae1ca3933",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "1731ef8e-96ef-45c6-8d16-b77883689acf"
+    },
+    {
+      "roomId": "882f5a22-be6d-4152-88e4-6b7f6ef39825",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "f94fabf4-90ea-47fc-b69f-2b91a7de2899"
+    },
+    {
+      "roomId": "84bc0457-c2e5-47e7-8813-832acbebbce0",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "6e06c802-d7ab-47b6-9b03-c924ad85b1c6"
+    },
+    {
+      "roomId": "3646881f-70fe-4abd-b112-c037a68269f1",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "85c600a9-ce1c-4f73-bbb4-23ba9dd153cf"
+    },
+    {
+      "roomId": "14e1a249-13dc-4007-8146-b6c59c992c21",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "e54b8dd6-92e1-4ed2-a26e-95cd8f0bf9e5"
+    },
+    {
+      "roomId": "71f596b9-5658-424b-9d91-5190f7aea170",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "5e3b6bdb-f4e5-48df-bc80-631a1f0f6548"
+    },
+    {
+      "roomId": "232533c6-9101-4146-a311-6089f448aaaa",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "b6b06f4c-ea40-4550-a85f-0e8ef728022b"
+    },
+    {
+      "roomId": "449d8b37-ae9f-4e1b-ba6b-130881fb11bb",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "ec670751-aeea-472a-83aa-a173140468b3"
+    },
+    {
+      "roomId": "330afca0-abd6-4b60-b5f8-424b989fb102",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "5d881a8f-5cb2-43b5-ae27-87f67d94fca4"
+    },
+    {
+      "roomId": "3577860e-8914-491a-9e6a-1f0b7f8b6fb7",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "d4f4631f-d7ff-4c7a-b6f5-077418386f3c"
+    },
+    {
+      "roomId": "dac1bd7a-a680-4e79-acef-55bf6c1c0777",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "c229f963-6e74-489e-b8bd-1b8a431a8051"
+    },
+    {
+      "roomId": "83ce1ca7-1b79-4132-abf0-db228e592706",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "b9cec7fe-f792-4805-8b77-b745ddef785f"
+    },
+    {
+      "roomId": "414665bb-7092-48ef-aafe-a18aa0aaa7ba",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "185f9b88-66a6-49aa-a9ed-060d609b1a08"
+    },
+    {
+      "roomId": "db477f12-1654-422f-94c0-2eae9e1e4598",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "b4b22cf5-f7aa-46ad-9dba-b3c65e3a5fc0"
+    },
+    {
+      "roomId": "92b000f2-ac91-4d2f-b47d-f7eeb00bee65",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "d400c988-80ff-4a0f-af88-48b65b436d13"
+    },
+    {
+      "roomId": "a6d42820-5022-4637-9790-bd1f734e229c",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "c3b9e99d-8b1a-4933-a933-fd6e8c1a5d4d"
+    },
+    {
+      "roomId": "cac81843-be9b-4029-8038-be82d46f447f",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "03a56c0c-021c-40f9-9164-06f1f2182a31"
+    },
+    {
+      "roomId": "b1b71ec8-eea4-414e-ab34-337017dd4140",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "568f97bc-1b6b-4737-b1c3-93989f21d1c8"
+    },
+    {
+      "roomId": "0df58ac9-8806-4e91-936b-01897b864ab3",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "9a6a34c2-2e12-4e12-9ce1-7b9c7cb89d1d"
+    },
+    {
+      "roomId": "ff3eae04-4585-4739-bc12-9bbe27fd8d34",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "b0d243b7-65c5-4739-a68b-7b492dbd5cff"
+    },
+    {
+      "roomId": "fce116fa-ab61-4161-8f92-4773b01309e7",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "babf4668-b98a-442d-be00-4578a2b8b0b8"
+    },
+    {
+      "roomId": "fc0d78d3-9626-4937-ba31-f8f97e157024",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "2b34cf23-7457-470e-b1fd-8aecf18b48e1"
+    },
+    {
+      "roomId": "e7b9e521-a982-449e-acce-2d3dbc71debf",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "f1558136-367e-4727-ac36-c982876ab68f"
+    },
+    {
+      "roomId": "2aa35c79-1108-4f85-b2ba-cf3749c2e689",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "ed667c51-8a85-4188-bc6e-105353793adf"
+    },
+    {
+      "roomId": "b66d2d5e-aca7-4637-9d38-88d5bf9a3279",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "b11c3a79-50a7-4122-8b44-592266a286d2"
+    },
+    {
+      "roomId": "5690356d-6b9b-4484-9392-766e6087891e",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "eda81c69-959b-4acd-935a-2dc783d57fb4"
+    },
+    {
+      "roomId": "0342b40f-1bbd-4b98-8f45-7dd2733cfc61",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "04f52455-3884-415d-a94e-ff0647592e0c"
+    },
+    {
+      "roomId": "21917fe7-ffd7-406f-8d56-c00d4c43bb58",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "6a010681-b94d-4f4c-9231-70bf06662f46"
+    },
+    {
+      "roomId": "495e2efd-079b-48b3-8fdd-6abfa6e1119b",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "f07a34cf-8230-4673-bb80-3effc0b5c99d"
+    },
+    {
+      "roomId": "b9ceac2b-cc45-46ca-a326-ff6156c536bc",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "e5963f49-1dd7-49c1-9d86-0051f1614445"
+    },
+    {
+      "roomId": "94d651c9-bc3f-49b6-aaa9-b694cf0eb2d9",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "4cb63c29-4ef4-4413-a135-65a86197741c"
+    },
+    {
+      "roomId": "56655fb3-269a-4d7a-9d4a-34738a2563a1",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "5dd763da-11c6-415c-91fd-d098b9b7069e"
+    },
+    {
+      "roomId": "bef5806c-8978-4836-82ce-492e187223be",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "3a51f943-2367-4058-9cab-89e6abfa6a9d"
+    },
+    {
+      "roomId": "3b18bd45-47da-446c-9ec0-b3c93e25aa7e",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "f6527c44-faa9-40e0-a573-8a3b1e89221f"
+    },
+    {
+      "roomId": "292445a4-9c16-40d6-a5b5-31c8fdba0748",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "b517b583-478c-40b5-855f-86435dcb0f34"
+    },
+    {
+      "roomId": "69998a89-d6dc-4259-9470-226f58cd5a63",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "b651b443-0954-405a-988a-a62b2f3a2fe2"
+    },
+    {
+      "roomId": "b817bad9-3864-40aa-8789-589261368109",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "839ed04c-a7e0-49fd-98d8-d437683ddfbd"
+    },
+    {
+      "roomId": "af68d744-6bb2-4ccc-bbee-74475046849f",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "370d9837-7496-4719-96cb-01888fc03531"
+    },
+    {
+      "roomId": "4b1f546d-aead-479e-a374-8dd3bf91d479",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "28e3f21f-3782-4626-a56c-76f7250302f3"
+    },
+    {
+      "roomId": "414f24bc-1030-4765-a6da-aeaa4e2cabea",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "e4f65f41-0ce3-4f4a-8129-4988027133db"
+    },
+    {
+      "roomId": "7af6e77b-2dbf-459a-b744-37fb075060c6",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "bb53f2b5-c10f-430c-ae9a-0eb1f8593b85"
+    },
+    {
+      "roomId": "4e0fcb66-a131-4085-8e53-72f20ace3f8c",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "7c912134-aead-4d6c-8faf-45c4e5bbf831"
+    },
+    {
+      "roomId": "5c750ff9-39e2-4b9c-bf98-5274c3d0afa6",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "6db95994-cfa3-46d4-b91f-bfd7e8888461"
+    },
+    {
+      "roomId": "2c84f35d-99dc-4ae0-898a-9abe35824653",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "148661d3-6dd3-4da9-bea6-ca15ce40d736"
+    },
+    {
+      "roomId": "0c7b05a0-6da7-4760-b30e-f91dbc2f1d21",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "31d50e05-88ab-489e-a026-52cffa0d3010"
+    },
+    {
+      "roomId": "b143037c-eaa5-4e1c-9c33-d6ffde9d17fc",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "7c4c1630-540d-42b0-bb69-10500563f56a"
+    },
+    {
+      "roomId": "bbc8bb68-81cd-454e-90e1-32ad15da18ac",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "c19712ec-f6e1-4edb-96d8-3bf780df8e53"
+    },
+    {
+      "roomId": "c512b702-0163-4e51-8e07-f6399abc0c73",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "5259e2e2-6492-4d45-98ae-b6c570929e9b"
+    },
+    {
+      "roomId": "8d11ebb2-2a45-4576-af64-b4522f687862",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "3166ab71-2d24-467e-a79d-bb8d504b652c"
+    },
+    {
+      "roomId": "97dbb2a7-79b9-4586-94c5-0d7bbfacbd0a",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "f7d217b9-24c2-4689-ad29-6b196bcbfe59"
+    },
+    {
+      "roomId": "f76f56c1-c8a2-4a4f-ac2f-d59603ad2c29",
+      "userId": "3997920d-6fc3-4c0d-b577-8ec600451c83",
+      "patientId": "38f598aa-cc7d-49f1-a7c2-202459694fd0"
+    }
+  ]
+}

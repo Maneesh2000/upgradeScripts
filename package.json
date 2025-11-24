@@ -1,0 +1,21 @@
+{
+  "name": "opensearch-metrics-checker",
+  "version": "1.0.0",
+  "description": "OpenSearch metrics monitoring script for load testing",
+  "private": true,
+  "scripts": {
+    "check": "ts-node checkOpenSearchMetrics.ts",
+    "check:continuous": "ts-node checkOpenSearchMetrics.ts --continuous",
+    "check:fast": "ts-node checkOpenSearchMetrics.ts --continuous --interval=5"
+  },
+  "dependencies": {
+    "@opensearch-project/opensearch": "^2.0.0",
+    "@aws-sdk/client-ssm": "^3.859.0",
+    "@aws-sdk/credential-providers": "^3.859.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
